@@ -1,6 +1,7 @@
 package com.tf.inventory.service.kafka.producers;
 
 import com.tf.events.inventories.BrandCreatedEvent;
+import com.tf.events.inventories.InventoryCreatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -29,4 +30,13 @@ public class InventoryProducer {
 
     }
 
+    public void sendMessage(InventoryCreatedEvent event){
+        LOGGER.info(String.format("Inventory created => %s",event.toString()));
+
+        Message<InventoryCreatedEvent> message = MessageBuilder.withPayload(event)
+                .setHeader(KafkaHeaders.TOPIC,"inventory-car-created")
+                .build();
+
+        kafkaTemplate.send(message);
+    }
 }

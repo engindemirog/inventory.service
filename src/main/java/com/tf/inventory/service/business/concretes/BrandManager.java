@@ -34,8 +34,8 @@ public class BrandManager implements BrandService {
 
         CreatedBrandResponse response = modelMapperService.forResponse().map(createdBrand, CreatedBrandResponse.class);
 
-        BrandCreatedEvent brandCreatedEvent = modelMapperService.forResponse().map(createdBrand,BrandCreatedEvent.class);
-        inventoryProducer.sendMessage(brandCreatedEvent);
+        //BrandCreatedEvent brandCreatedEvent = modelMapperService.forResponse().map(createdBrand,BrandCreatedEvent.class);
+        //inventoryProducer.sendMessage(brandCreatedEvent);
 
         return response;
     }
