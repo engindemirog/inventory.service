@@ -6,7 +6,8 @@ import com.tf.inventory.service.business.dtos.responses.CreatedModelResponse;
 import com.tf.inventory.service.common.mapping.ModelMapperService;
 import com.tf.inventory.service.entities.Brand;
 import com.tf.inventory.service.entities.Model;
-import com.tf.inventory.service.repositories.ModelRepository;
+
+import com.tf.inventory.service.repositories.abstracts.ModelRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

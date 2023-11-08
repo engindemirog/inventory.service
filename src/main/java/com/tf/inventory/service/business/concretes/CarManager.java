@@ -1,13 +1,15 @@
 package com.tf.inventory.service.business.concretes;
 
-import com.tf.events.inventories.InventoryCreatedEvent;
+
 import com.tf.inventory.service.business.abstracts.CarService;
 import com.tf.inventory.service.business.dtos.requests.CreateCarRequest;
 import com.tf.inventory.service.business.dtos.responses.CreatedCarResponse;
 import com.tf.inventory.service.entities.Car;
 import com.tf.inventory.service.entities.Model;
 import com.tf.inventory.service.kafka.producers.InventoryProducer;
-import com.tf.inventory.service.repositories.CarRepository;
+
+import com.tf.inventory.service.repositories.abstracts.CarRepository;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,9 @@ import java.util.UUID;
 public class CarManager implements CarService {
     private CarRepository carRepository;
     private InventoryProducer inventoryProducer;
+
+
+
 
     @Override
     public CreatedCarResponse add(CreateCarRequest createCarRequest) {

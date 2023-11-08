@@ -1,4 +1,4 @@
-package com.tf.inventory.service.repositories;
+package com.tf.inventory.service.repositories.abstracts;
 
 import com.tf.inventory.service.entities.Model;
 import org.springframework.data.jpa.repository.JpaRepository;

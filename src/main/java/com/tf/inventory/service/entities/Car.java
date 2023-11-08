@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name="cars")
 public class Car {
@@ -26,4 +25,13 @@ public class Car {
     @ManyToOne()
     @JoinColumn(name="model_id")
     private Model model;
+
+
+    public Car(int modelYear, String plate, int state, double dailyPrice, Model model) {
+        this.modelYear = modelYear;
+        this.plate = plate;
+        this.state = state;
+        this.dailyPrice = dailyPrice;
+        this.model = model;
+    }
 }

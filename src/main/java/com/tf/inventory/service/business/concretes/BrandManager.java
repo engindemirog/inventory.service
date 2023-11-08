@@ -1,6 +1,6 @@
 package com.tf.inventory.service.business.concretes;
 
-import com.tf.events.inventories.BrandCreatedEvent;
+
 import com.tf.inventory.service.business.abstracts.BrandService;
 import com.tf.inventory.service.business.dtos.requests.CreateBrandRequest;
 import com.tf.inventory.service.business.dtos.responses.CreatedBrandResponse;
@@ -8,9 +8,10 @@ import com.tf.inventory.service.business.rules.BrandBusinessRules;
 import com.tf.inventory.service.common.mapping.ModelMapperService;
 import com.tf.inventory.service.entities.Brand;
 import com.tf.inventory.service.kafka.producers.InventoryProducer;
-import com.tf.inventory.service.repositories.BrandRepository;
+
+import com.tf.inventory.service.repositories.abstracts.BrandRepository;
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
+
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
